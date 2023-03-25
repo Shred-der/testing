@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+body{
+  margin:0px;
+  padding: 0px;
+  font-family: 'Montserrat', sans-serif;
+}
+*{
+  box-sizing: border-box;
+  margin:0px;
+  padding: 0px;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("../images/background.png");
+  background-size: cover;
+  height: 700px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-outer-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid #190c3a;
+  animation: rotating 6s linear infinite;
+}
+
+.loading-inner-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #462b8a;
+  animation: rotating 6s linear infinite reverse;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+

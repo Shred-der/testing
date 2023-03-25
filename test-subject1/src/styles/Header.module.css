@@ -1,0 +1,21 @@
+.container{
+    width:100%;
+    background-color: black;
+    color:white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding:5px 0px;
+    height: 150px;
+  }
+  
+  .nav{
+    width:150px;
+    height: 150px;
+  }
+  .img{
+    width:260%;
+    height:90%;
+  }
+  
+  

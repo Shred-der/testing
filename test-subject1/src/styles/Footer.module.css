@@ -1,0 +1,14 @@
+.container {
+    background-color: #181818;
+    padding: 30px 0px;
+    text-align: center;
+}
+
+.text {
+    font-size: 12px;
+    color: rgb(242, 240, 240);
+}
+
+.text+.text {
+    margin-top: 4px;
+}

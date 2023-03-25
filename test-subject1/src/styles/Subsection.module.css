@@ -1,0 +1,23 @@
+.container{
+    background-color: black;
+    max-width:1308px;
+    padding:1.5rem;
+}
+
+.imagesCont{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+} 
+
+.singleImg{
+    width:20%;
+}
+.img{
+    width:100%;
+    height:100%;
+}
+.img:hover{
+    transform: scale(1.05);
+    transition: all 0.5s;
+}
