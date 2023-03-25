@@ -2,14 +2,9 @@ import React from 'react';
 import { useEffect, useState } from "react";
 import { useSession, signIn, signOut } from "next-auth/react";
 import { useRouter } from 'next/router';
-import Link from "next/link";
 import { CardanoWallet } from '@meshsdk/react';
 import { useWallet, useAssets } from '@meshsdk/react';
 import { BlockfrostProvider } from '@meshsdk/core';
-import styles from "../styles/Signin.module.css";
-import Image from 'next/image';
-import logo1 from "../images/crusader_underground.png";
-import Loading from './Loading';
 import MetaDataCheck from './metadatacheck';
 
 export default function SignIn() {
@@ -110,8 +105,8 @@ export default function SignIn() {
   // 1. (i) The user is signed into Discord and connected to wallet and has Gold CNFT
   if (connected && hasGold) {
     return (
-      <div className={styles.container}>
-        <div className={styles.btncontent}>
+      <div>
+        <div>
         <h1>You have the required NFT with the Gold Medic property</h1>
         <button onClick={() => grantGoldRole()} disabled={disabled}>
             {loading ? "Please Wait..." : "Give me the Gold role!"}
@@ -128,8 +123,8 @@ export default function SignIn() {
   // 1. (ii) The user is signed into Discord and connected to wallet and has Silver CNFT
   if (connected && hasSilver) {
     return (
-      <div className={styles.container}>
-        <div className={styles.btncontent}>
+      <div>
+        <div>
           <h1>You have the required NFT with the Silver Medic property</h1>
         <button onClick={() => grantSilverRole()} disabled={disabled}>
             {loading ? "Please Wait..." : "Give me the Silver role!"}
@@ -146,8 +141,8 @@ export default function SignIn() {
   // 1. (iii) The user is signed into Discord and connected to wallet and has Platinum CNFT
   if (connected && hasPlatinum) {
     return (
-      <div className={styles.container}>
-        <div className={styles.btncontent}>
+      <div>
+        <div>
         <h1>You have the required NFT with the Platinum Medic property</h1>
         <button onClick={() => grantPlatinumRole()} disabled={disabled}>
             {loading ? "Please Wait..." : "Give me the Platinum role!"}
@@ -164,8 +159,8 @@ export default function SignIn() {
    // 1. (iv) The user is signed into Discord and connected to wallet and has Air CNFT
    if ( connected && hasAir) {
     return (
-      <div className={styles.container}>
-        <div className={styles.btncontent}>
+      <div>
+        <div>
         <h1>You have the required NFT with the Air Medic property</h1>
         <button onClick={() => grantAirRole()} disabled={disabled}>
             {loading ? "Please Wait..." : "Give me the Air role!"}
@@ -183,20 +178,19 @@ export default function SignIn() {
   // 2. Connect Wallet
   if (!connected) {
     return (
-      <div className={styles.container}>
+      <div>
         
-        <div className={styles.title}> 
+        <div> 
           <p> Get Access to our restricted contents by holding our NFT(s)</p>
         </div>
-        <div className={styles.imgcontainer}>
-        <Image src={logo1} alt={"Credit-Crusader"} className={styles.img} />
+        <div>
         </div>
-        <div className={styles.content}>
+        <div>
           <button>
             GET MEMBERSHIP CNFT
           </button>
         </div>
-        <div className={styles.content}>
+        <div>
           <h1> You have our CNFT? Join Discord!</h1>
           <h2 >Discord Membership Access</h2>
           <CardanoWallet />
@@ -209,8 +203,8 @@ export default function SignIn() {
   // 3. Connect with Discord (OAuth)
   if (!session) {
     return (
-      <div className={styles.container}>
-        <div className={styles.content}>
+      <div>
+        <div>
           <h2 >Sign In with Discord</h2>
           <p>Sign In with Discord to check your eligibility for the NFT!</p>
 
@@ -229,14 +223,14 @@ export default function SignIn() {
   // 4. If connected and session and !haspolicyIdasset
   if (loading) {
     return (
-      <Loading />
+     <h1>Loading...</h1>
     );
   }
 
   if  (!hasGold || !hasSilver || !hasPlatinum || !hasAir) {
     return (
-      <div className={styles.container}>
-        <div className={styles.content}>
+      <div>
+        <div>
           <p> You don't have the required NFT</p>
           <button>
             GET MEMBERSHIP CNFT
